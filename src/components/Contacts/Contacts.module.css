@@ -1,6 +1,7 @@
 .container {
     padding: 10px;
     max-width: 400px;
+    width: calc(100% - 15px * 2);
 }
 .contactForm {
     display: flex;
@@ -8,6 +9,10 @@
 }
 .contactInput {
     margin-bottom: 15px;
+}
+.filterInput {
+    max-width: 400px;
+    width: calc(100% - 15px * 2);
 }
 
 .addBtn {
@@ -20,4 +25,7 @@
 }
 .callIcon {
     margin-right: 10px;
+}
+.text {
+    font-size: 20px;
 }

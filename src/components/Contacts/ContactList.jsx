@@ -11,7 +11,7 @@ export const ContactList = ({ filtered }) => {
   return (
     <List>
       {filtered.map(({ id, name, number }) => (
-        <ListItem key={id} >
+        <ListItem key={id} className={css.text}>
         <PersonRoundedIcon fontSize="small" className={css.callIcon} />
         {name}: {number}
         <IconButton

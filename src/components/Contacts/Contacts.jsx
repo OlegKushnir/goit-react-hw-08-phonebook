@@ -2,13 +2,12 @@ import css from './Contacts.module.css';
 import React from 'react';
 import { ContactList } from './ContactList';
 import { ContactForm } from './ContactForm';
-import { Filter } from '../Filter/Filter';
+import { FilterContacts } from './FilterContacts';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterValue } from 'redux/store';
 import { fetchContacts } from 'redux/operations/operations';
 import { useEffect } from 'react';
-import {Typography} from '@mui/material';
-
+import { Typography, Skeleton, Box } from '@mui/material';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -30,17 +29,18 @@ const Contacts = () => {
 
   return (
     <>
-      <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-        <span className={css.title}>Phonebook</span>
-      </Typography>
-      
-      <ContactForm />
+        <ContactForm />
       <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-      <span className={css.title}>Contacts</span>
+        <span className={css.title}>Contacts</span>
       </Typography>
-      <Filter inputFilter={inputFilter} value={filter} />
-      {isLoading && <h3>Loading...</h3>}
-      {items && <ContactList filtered={filterContacts()} />}
+      <FilterContacts inputFilter={inputFilter} value={filter} />
+      {items &&  <ContactList filtered={filterContacts()} />  }
+      {isLoading && (
+        <Box sx={{ width: 300 }}>
+          <Skeleton animation="wave" />
+        </Box>
+      )}
+    
     </>
   );
 };

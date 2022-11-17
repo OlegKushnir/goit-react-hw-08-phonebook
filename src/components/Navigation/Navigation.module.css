@@ -1,6 +1,9 @@
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
+  align-items: center;
 }
   .link {
     margin-right: 30px;
