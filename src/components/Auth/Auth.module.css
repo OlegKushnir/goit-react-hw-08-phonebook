@@ -1,0 +1,14 @@
+.container {
+    max-width: 400px;
+    padding: 10px;
+}
+.authForm {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.authBtn {
+    margin-top: 15px;
+    margin-right: 10px;
+}
